@@ -1,0 +1,78 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    // id 'org.beryx.jlink' version '2.12.0'
+}
+
+group 'com.formula'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+//application{
+//   mainClassName("com.matheusmarkies.spaghettibridge.main.Main")
+//  mainModule.set("com.matheusmarkies.spaghettibridge")
+//}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'com.fazecast:jSerialComm:2.9.2'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation 'mysql:mysql-connector-java:5.1.13'
+    // https://mvnrepository.com/artifact/org.openjfx/javafx-web
+    implementation group: 'org.openjfx', name: 'javafx-web', version: '20-ea+11'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+javafx{
+    modules =
+            [
+                    'javafx.swing',
+                    'javafx.graphics',
+                    'javafx.fxml',
+                    'javafx.media',
+                    'javafx.controls',
+                    'javafx.web'
+            ]
+    version = '12'
+}
+
+mainClassName = 'com.formula.Main'
+
+//jlink {
+//targetPlatform("mac") {
+//    jdkHome = "/usr/java/jdk-mac/Contents/Home"
+//}
+//targetPlatform("linux-x64") {
+//    jdkHome = "/usr/java/jdk"
+//}
+//targetPlatform("windows-x64") {
+//    jdkHome = "/usr/java/jdk-win"
+//}
+//options = ['--compress', '2', '--no-header-files', '--no-man-pages']
+//   launcher {
+//       name = 'com.matheusmarkies.spaghettibridge.main'
+//   }
+//}
+
+jar {
+    manifest {
+        attributes 'Main-Class': "$mainClassName"
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+}
