@@ -1,6 +1,7 @@
 package com.formula.serialport;
 
 import com.fazecast.jSerialComm.SerialPort;
+import com.formula.frames.controller.MainFrameController;
 import javafx.application.Platform;
 
 public class SerialReadder{

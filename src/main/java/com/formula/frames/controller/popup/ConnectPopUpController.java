@@ -1,5 +1,6 @@
 package com.formula.frames.controller.popup;
 
+import com.formula.frames.controller.MainFrameController;
 import com.formula.serialport.SerialManager;
 import com.formula.serialport.SerialReadder;
 import javafx.collections.FXCollections;

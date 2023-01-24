@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa8cfb35-210b-4422-82f7-0e132a0561b3" name="Changes" comment="First Commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/objects/WheelSensor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/MainFrameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/MainFrameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/popup/ConnectPopUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/popup/ConnectPopUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialReadder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialReadder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/Hardware/CarTelemetrySystem.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/formula/Hardware/CarTelemetrySystem.ino" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +23,43 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,14 +80,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Matheus Markies/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/FormulaRouteTelemetry/src/main/java/com/formula&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Matheus Markies/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/FormulaRouteTelemetry/src/main/java/com/formula",
+    "settings.editor.selected.configurable": "project.scopes"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Matheus Markies\Documents\workspace-spring-tool-suite-4-4.13.1.RELEASE\FormulaRouteTelemetry\src\main\java\com\formula" />
@@ -53,6 +97,34 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Matheus Markies\Documents\workspace-spring-tool-suite-4-4.13.1.RELEASE\FormulaRouteTelemetry\src\main\resources\com.formula" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FormulaRouteTelemetry [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.FormulaRouteTelemetry [run]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674502928154</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First Commit">
+      <created>1674505635108</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674505635108</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -1,3 +1,6 @@
+#include <ArduinoJson.h>
+#include <ArduinoJson.hpp>
+
 #include "MPU9250.h"
 
 MPU9250 mpu;
@@ -20,7 +23,7 @@ struct __attribute__((packed)) MPU_Data {
 MPU_Data data;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   Wire.begin();
   delay(2000);
 
@@ -36,8 +39,11 @@ void loop() {
   if (mpu.update()) {
     static uint32_t prev_ms = millis();
     if (millis() > prev_ms + 25) {
+
       data = getMPUData();
-      printMPUData(data);
+      Write(data,"LFW:");
+      //printMPUData(data);
+
       prev_ms = millis();
     }
   }
@@ -85,4 +91,23 @@ void printMPUData(MPU_Data data) {
   Serial.println(data.LinearAccY);
   Serial.print("LinearAccZ: ");
   Serial.println(data.LinearAccZ);
+}
+
+void Write(MPU_Data receivedData, String wheel) {
+StaticJsonDocument<96> doc;
+
+doc["Yaw"] = receivedData.Yaw;
+doc["Pitch"] = receivedData.Pitch;
+doc["Roll"] = receivedData.Roll;
+doc["EulerX"] = receivedData.EulerX;
+doc["EulerY"] = receivedData.EulerY;
+doc["EulerZ"] = receivedData.EulerZ;
+doc["AccX"] = receivedData.AccX;
+doc["AccY"] = receivedData.AccY;
+doc["AccZ"] = receivedData.AccZ;
+doc["LinearAccX"] = receivedData.LinearAccX;
+doc["LinearAccY"] = receivedData.LinearAccY;
+doc["LinearAccZ"] = receivedData.LinearAccZ;
+Serial.println();
+serializeJson(doc, Serial);
 }
