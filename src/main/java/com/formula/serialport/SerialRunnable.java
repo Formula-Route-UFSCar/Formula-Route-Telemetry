@@ -13,8 +13,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Scanner;
 
-
-
 public class SerialRunnable implements SerialPortPacketListener, Runnable {
 
     private final SerialPort port;
@@ -38,7 +36,6 @@ public class SerialRunnable implements SerialPortPacketListener, Runnable {
     @Override
     public void run() {
         port.addDataListener(this);
-        //mouseTrapCarManager.getMainFrameController().getRotationSeries().getData().add(new XYChart.Data<String,Double>("0",0.));
     }
 
     enum ReadType{
@@ -62,37 +59,37 @@ public class SerialRunnable implements SerialPortPacketListener, Runnable {
 
         Scanner scanner_stream = new Scanner(port.getInputStream());
 
-        while(scanner_stream.hasNextLine()) {
+        while (scanner_stream.hasNextLine()) {
             String received_string = scanner_stream.nextLine();
 
             inputString = received_string;
-
-            if(!open) {
-                if (received_string.indexOf('{') != -1) {
-                    //System.out.println(inputString);
-                    //System.out.println();
-                    jSon = inputString;
-                    open = true;
-                }
-            }else{
-                if (received_string.indexOf('}') != -1) {
-                    //System.out.println(inputString);
-                    //System.out.println();
-                    jSon += inputString;
-                    ObjectMapper mapper = new ObjectMapper();
-                    try {
-                        WheelSensor lib = mapper.readValue(jSon, WheelSensor.class);
-                        System.out.println(lib.toString());
-                    } catch (JsonProcessingException e) {
-                        throw new RuntimeException(e);
+            if (readType == ReadType.None)
+                if (!open) {
+                    if (received_string.indexOf('{') != -1) {
+                        jSon = inputString;
+                        open = true;
                     }
-                    open = false;
-                }else
-                    jSon += inputString;
-            }
+                } else {
+                    if (received_string.indexOf('}') != -1) {
+                        jSon += inputString;
+                        ObjectMapper mapper = new ObjectMapper();
+                        try {
+                            WheelSensor wheel = mapper.readValue(jSon, WheelSensor.class);
 
+                            controller.getYaw_car_image().setRotate(wheel.getYaw());
+                            controller.getRoll_car_image().setRotate(wheel.getRoll());
+                            controller.getPitch_car_image().setRotate(wheel.getPitch());
+
+                            System.out.println(wheel.toString());
+                        } catch (JsonProcessingException e) {
+                            throw new RuntimeException(e);
+                        }
+                        readType = ReadType.None;
+                        open = false;
+                    } else
+                        jSon += inputString;
+                }
         }
-
     }
     public static double toDouble(byte[] bytes) {
         return ByteBuffer.wrap(bytes).getDouble();

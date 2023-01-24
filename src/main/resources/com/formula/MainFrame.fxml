@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.formula.frames.controller.MainFrameController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.formula.frames.controller.MainFrameController">
    <children>
       <MenuBar fx:id="menu_bar">
          <menus>
@@ -27,14 +26,19 @@
             <AnchorPane />
             <AnchorPane>
                <children>
-                  <LineChart fx:id="torque_velocity_chart" animated="false" axisSortingPolicy="NONE" layoutX="244.0" layoutY="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </LineChart>
+                  <ImageView fx:id="pitch_car_image" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/pitchaxis.jpg" />
+                     </image></ImageView>
+                  <ImageView fx:id="yaw_car_image" fitHeight="150.0" fitWidth="200.0" layoutX="214.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/rollaxis.jpg" />
+                     </image></ImageView>
+                  <ImageView fx:id="roll_car_image" fitHeight="150.0" fitWidth="200.0" layoutX="414.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/yawaxis.jpg" />
+                     </image></ImageView>
+                  <AnchorPane fx:id="canvas_wheel_acc" layoutX="14.0" layoutY="164.0" prefHeight="393.0" prefWidth="380.0" />
                </children></AnchorPane>
          </items>
       </SplitPane>
