@@ -94,6 +94,7 @@ void printMPUData(MPU_Data data) {
 }
 
 void Write(MPU_Data receivedData, String wheel) {
+Serial.println(wheel);
 StaticJsonDocument<96> doc;
 
 doc["Yaw"] = receivedData.Yaw;

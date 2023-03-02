@@ -25,10 +25,12 @@
 package com.formula.objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.formula.serialport.SerialRunnable;
 import lombok.*;
 
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode
 public class WheelSensor {
+   private SerialRunnable.Wheel wheel;
    @JsonProperty("Yaw")
    public double yaw;
    @JsonProperty("Pitch")

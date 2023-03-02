@@ -34,6 +34,7 @@ import com.formula.objects.WheelSensor;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -63,15 +64,20 @@ public class SerialRunnable implements SerialPortPacketListener, Runnable {
     }
 
     enum ReadType{
-        None,LFW,RFW,LBW,RBW
+        None,Wheel,Break
     }
 
+    public enum Wheel{
+        None,LFW,RFW,LBW,RBW
+    }
+    Wheel wheelSide;
     ReadType readType = null;
     int readingSensorIndex = 0;
     boolean getReadType = true;
     private final byte[] buffer = new byte[2048];
 
     String jSon = "";
+
     boolean open = false;
     @Override
     public void serialEvent(SerialPortEvent event) {
@@ -87,7 +93,28 @@ public class SerialRunnable implements SerialPortPacketListener, Runnable {
             String received_string = scanner_stream.nextLine();
 
             inputString = received_string;
-            if (readType == ReadType.None)
+
+            //if (readType == ReadType.None){
+                //switch (inputString){
+                    //case "LFW:":readType = ReadType.Wheel;
+                        //wheelSide = Wheel.LFW;
+                        //break;
+                    //case "RFW:":readType = ReadType.Wheel;
+                        //wheelSide = Wheel.RFW;
+                        //break;
+                    //case "LBW:":readType = ReadType.Wheel;
+                        //wheelSide = Wheel.LBW;
+                        //break;
+                    //case "RBW:":readType = ReadType.Wheel;
+                        //wheelSide = Wheel.RBW;
+                        //break;
+                    //default:
+                        //readType = ReadType.None;
+                        //break;
+                //}
+            //}
+
+            //if (readType == ReadType.Wheel)
                 if (!open) {
                     if (received_string.indexOf('{') != -1) {
                         jSon = inputString;
@@ -99,14 +126,18 @@ public class SerialRunnable implements SerialPortPacketListener, Runnable {
                         ObjectMapper mapper = new ObjectMapper();
                         try {
                             WheelSensor wheel = mapper.readValue(jSon, WheelSensor.class);
+                            controller.getDataList().add(wheel);
 
-                            controller.getYaw_car_image().setRotate(wheel.getYaw());
-                            controller.getRoll_car_image().setRotate(wheel.getRoll());
+                            wheel.setWheel(wheelSide);
+                            controller.getYaw_car_image().setRotate(-wheel.getRoll()); //Center
+                            controller.getRoll_car_image().setRotate(wheel.getYaw() + 90); //Right
                             controller.getPitch_car_image().setRotate(wheel.getPitch());
 
-                            System.out.println(wheel.toString());
+                            //System.out.println(wheel.toString());
                         } catch (JsonProcessingException e) {
-                            throw new RuntimeException(e);
+                            System.err.println(e);
+                        }finally {
+                            readType = ReadType.None;
                         }
                         readType = ReadType.None;
                         open = false;

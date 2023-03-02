@@ -25,6 +25,8 @@
 package com.formula.frames.controller;
 
 import com.formula.frames.controller.popup.ConnectPopUpController;
+import com.formula.manager.utilities.XLS;
+import com.formula.objects.WheelSensor;
 import com.formula.serialport.SerialReadder;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -34,6 +36,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
@@ -45,6 +48,7 @@ import lombok.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -53,15 +57,13 @@ import java.util.concurrent.TimeUnit;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode
 public class MainFrameController{
     private SerialReadder serialReadder;
+    private ArrayList<WheelSensor> dataList = new ArrayList<>();
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
-
-    @FXML
-    private AnchorPane canvas_wheel_acc;
 
     @FXML
     private MenuItem connect_menu_button;
@@ -73,6 +75,9 @@ public class MainFrameController{
     private MenuBar menu_bar;
 
     @FXML
+    private Button pdfGeneratorButton;
+
+    @FXML
     private ImageView pitch_car_image;
 
     @FXML
@@ -80,6 +85,16 @@ public class MainFrameController{
 
     @FXML
     private ImageView yaw_car_image;
+
+    @FXML
+    void OnClickInPdfGenerator(ActionEvent event) {
+        System.out.println(dataList.size());
+        try {
+            XLS.createXLSFile(dataList);
+        } catch (IOException e) {
+            System.err.println(e);
+        }
+    }
 
     @FXML
     void onClickInConnectButton(ActionEvent event) {
@@ -93,7 +108,6 @@ public class MainFrameController{
 
     @FXML
     void initialize() {
-        assert canvas_wheel_acc != null : "fx:id=\"canvas_wheel_acc\" was not injected: check your FXML file 'MainFrame.fxml'.";
         assert connect_menu_button != null : "fx:id=\"connect_menu_button\" was not injected: check your FXML file 'MainFrame.fxml'.";
         assert debug_menu_button != null : "fx:id=\"debug_menu_button\" was not injected: check your FXML file 'MainFrame.fxml'.";
         assert menu_bar != null : "fx:id=\"menu_bar\" was not injected: check your FXML file 'MainFrame.fxml'.";
@@ -146,6 +160,14 @@ public class MainFrameController{
     @Override
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    public ArrayList<WheelSensor> getDataList() {
+        return dataList;
+    }
+
+    public void setDataList(ArrayList<WheelSensor> dataList) {
+        this.dataList = dataList;
     }
 
     @Override

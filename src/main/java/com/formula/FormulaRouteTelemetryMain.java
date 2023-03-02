@@ -24,6 +24,7 @@
 
 package com.formula;
 
+import com.formula.manager.utilities.Save;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,8 +33,10 @@ import javafx.stage.Stage;
 
 import com.formula.frames.controller.*;
 
+import java.io.File;
 import java.io.IOException;
 
+import static com.formula.manager.utilities.Save.ApplicationFolder;
 import static javafx.application.Application.launch;
 
 public class FormulaRouteTelemetryMain extends Application {
@@ -44,6 +47,10 @@ public class FormulaRouteTelemetryMain extends Application {
 
         FXMLLoader fxmlMain = new FXMLLoader(Main.class.getResource(
                 "/com/formula/MainFrame.fxml"));
+
+        File applicationFolder = new File(Save.ApplicationFolder);
+        if (!applicationFolder.exists())
+            applicationFolder.mkdirs();
 
         Parent root = fxmlMain.load();
 
