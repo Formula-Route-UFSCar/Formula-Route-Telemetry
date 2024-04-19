@@ -4,23 +4,165 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa8cfb35-210b-4422-82f7-0e132a0561b3" name="Changes" comment="Added: Serial communication between the receiver and the computer running the program.&#10;By structures converted into Json to improve serial communication performance, replacing the old string system.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/http/HttpStatusCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/ApplicationWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/LayoutSizeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/ViewManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="aa8cfb35-210b-4422-82f7-0e132a0561b3" name="Changes" comment="Main javafx frame">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_15_54_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_15_54_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_15_54__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_04_2024_15_54__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ConnectPopUp.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Hardware/CarTelemetrySystem.ino" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Hardware/MultiplexerScanner.ino" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Hardware/Receptor.ino" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainFrame.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MainFrameCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-Black.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-BlackItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-Bold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-BoldItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-ExtraBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-ExtraBoldItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-ExtraLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-ExtraLightItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-Italic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-Light.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-LightItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-Medium.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-MediumItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-SemiBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-SemiBoldItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-Thin.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/Inter-ThinItalic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/fonts/Inter/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/ActionStatusPopUp.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/AssetManualDowntimePopUp.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/ManualDowntimeConfirmationPopup.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/chart_styles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/color_pallate.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/components/AssetCell.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/components/WorkorderCell.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/angle-left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/angle-right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/apps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/bell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/book-alt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/bookmark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/brands/facebook-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/brands/facebook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/brands/google-symbol-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/brands/google-symbol.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/calendar-clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/check-circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/checkbox.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/coins.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/comment-alt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/computer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/cross-circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/cross.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/default/client/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/default/motor-eletrico.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/default/motor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/default/rocket-lunch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/default/workorder/checklist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/default/workorder/test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/document.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/down-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/envelope.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/exclamation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/eye (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/eye-crossed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/list-check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/menu-burger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/menu-dots-vertical.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/pencil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/phone-call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/picture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/record_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/record_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/refresh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/settings-sliders.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/share.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/stats.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/trash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/up-arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/user-add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/icons/users-alt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/menor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/pages/AssetsCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/pages/DashboardCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/pages/LoginCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/pages/NewWorkorderCSS.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/roles_privileges.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/title logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formula/tooltips_texts.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/pitchaxis.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/rollaxis.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/yawaxis.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/FormulaRouteTelemetryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/FormulaRouteTelemetryMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/MainFrameController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/popup/ConnectPopUpController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/objects/WheelSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialReadder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/ApplicationWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/ApplicationWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/Page.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/Badge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/Badge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/CustomButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/CustomButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/MinimizedCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/MinimizedCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/TopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/TopMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/navbar/NavBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/navbar/NavBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/navbar/NavigationButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/components/navbar/NavigationButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/javafx/utils/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/javafx/utils/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/layout/view/DashboardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/view/DashboardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/manager/utilities/Vector2D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/manager/utilities/Vector3D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/manager/utilities/XLS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/manager/utilities/XLS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/analyses/FFT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/analyses/FFT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/analyses/FeatureExtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/analyses/SensorStatusAnalyzer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/FilesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/FilesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/AssetState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/ChartType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/ColumnType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/DataPeriod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/DowntimeType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/EventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/HttpStatusCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/Maintenance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/PriorityState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/SensorState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/common/enums/WorkOrderState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Complex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Complex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Interpolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Interpolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Vector2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Vector3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/Vector3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/statistic/Filters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/statistic/Filters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/statistic/KalmanFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/utilities/math/statistic/KalmanFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/ConnectPopUp.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/Hardware/CarTelemetrySystem.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/Hardware/MultiplexerScanner.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/Hardware/Receptor.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/MainFrame.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/MainFrameCSS.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/images/pitchaxis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/images/rollaxis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/images/yawaxis.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,29 +182,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="FormulaRouteTelemetry" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -85,6 +205,9 @@
   <component name="NamedScopeManager">
     <scope name="Unnamed" pattern="lib:*..*" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2KjxAzMy5wZDZGEHPgVHbwT7DdA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -96,6 +219,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Matheus Markies/Documents/workspace-spring-tool-suite-4-4.13.1.RELEASE/FormulaRouteTelemetry/src/main/java/com/formula&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
@@ -129,7 +253,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -199,7 +323,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="Interaction with canvas elements based on collected data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interaction with canvas elements based on collected data" />
+    <MESSAGE value="Main javafx frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main javafx frame" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

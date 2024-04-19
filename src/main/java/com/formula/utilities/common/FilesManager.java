@@ -1,18 +1,18 @@
-package com.brasens.utilities.common;
+package com.formula.utilities.common;
 
-import com.brasens.MSPM;
+import com.formula.FormulaRouteTelemetryMain;
 
 import java.io.*;
 
 public class FilesManager {
 
-    public static String ApplicationDataFolder = System.getenv("APPDATA") + "\\MSPM";
-    public static String ApplicationSystemFolder = System.getenv("ProgramFiles") + "\\Brasens";
+    public static String ApplicationDataFolder = System.getenv("APPDATA") + "\\FormulaRouteTelemetry";
+    public static String ApplicationSystemFolder = System.getenv("ProgramFiles") + "\\FormulaRouteTelemetry";
     public static String[] ImportantDirectories = new String[]{
             ApplicationDataFolder + "\\" + "data",
-            ApplicationSystemFolder + "\\" + "MSPM",
-            ApplicationSystemFolder + "\\" + "MSPM" + "\\" + "jbr",
-            ApplicationSystemFolder + "\\" + "MSPM" + "\\" + "resources",
+            ApplicationSystemFolder + "\\" + "FormulaRouteTelemetry",
+            ApplicationSystemFolder + "\\" + "FormulaRouteTelemetry" + "\\" + "jbr",
+            ApplicationSystemFolder + "\\" + "FormulaRouteTelemetry" + "\\" + "resources",
     };
 
     public static final String LOCAL_FILE_REMEMBER_PASSWORD = "remember.fit";
@@ -29,7 +29,7 @@ public class FilesManager {
             objectStream.close();
             fileOutput.close();
         }catch (Exception e){
-            MSPM.printNicerStackTrace(e);
+            FormulaRouteTelemetryMain.printNicerStackTrace(e);
         }
     }
 
@@ -47,7 +47,7 @@ public class FilesManager {
            fileInput.close();
 
        }catch (Exception e){
-           MSPM.printNicerStackTrace(e);
+           FormulaRouteTelemetryMain.printNicerStackTrace(e);
        }
         return o;
     }

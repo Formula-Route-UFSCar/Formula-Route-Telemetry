@@ -1,4 +1,4 @@
-package com.brasens.utilities.math.statistic;
+package com.formula.utilities.math.statistic;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

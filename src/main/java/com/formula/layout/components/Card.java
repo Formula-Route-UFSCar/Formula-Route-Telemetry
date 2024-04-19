@@ -2,10 +2,8 @@ package com.formula.layout.components;
 
 import com.formula.FormulaRouteTelemetryMain;
 import com.formula.layout.LayoutSizeManager;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.control.Tooltip;
@@ -15,9 +13,6 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import lombok.Getter;
 import lombok.Setter;
-import org.kordamp.ikonli.javafx.FontIcon;
-
-import java.nio.charset.StandardCharsets;
 
 @Getter @Setter
 public class Card extends AnchorPane {
@@ -55,7 +50,7 @@ public class Card extends AnchorPane {
         cardHeaderHBox = new HBox();
 
         cardHeaderLabel = new Label(header);
-        cardHeaderLabel.setFont(new Font((int)(24.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
+        cardHeaderLabel.setFont(new Font((int)(18.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
 
         //VBox.setVgrow(cardHeaderHBox, javafx.scene.layout.Priority.ALWAYS);
         VBox.setMargin(cardHeaderHBox, LayoutSizeManager.getResizedInsert(0.0, 0.0, 0.0, 5.0));
@@ -64,16 +59,16 @@ public class Card extends AnchorPane {
         cardHeaderHBox.getChildren().addAll(cardHeaderLabel);
 
         cardTitleLabel = new Label(title);
-        cardTitleLabel.setFont(new Font((int)(24.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
+        cardTitleLabel.setFont(new Font((int)(18.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
         //VBox.setVgrow(cardTitleLabel, javafx.scene.layout.Priority.ALWAYS);
         VBox.setMargin(cardTitleLabel, LayoutSizeManager.getResizedInsert(10.0, 0.0, 0.0, 5.0));
 
         cardTitleHBox = new HBox();
 
         cardTitleLabel = new Label(title);
-        cardTitleLabel.setFont(new Font((int)(24.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
+        cardTitleLabel.setFont(new Font((int)(18.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
 
-        ImageView questionImage = new ImageView(new Image(FormulaRouteTelemetryMain.class.getResource("/mspm/icons/exclamation.png").toString()));
+        ImageView questionImage = new ImageView(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/exclamation.png").toString()));
         questionImage.setFitHeight(LayoutSizeManager.getResizedHeight(12));
         questionImage.setFitWidth(LayoutSizeManager.getResizedWidth(12));
         questionImage.setPreserveRatio(true);

@@ -1,14 +1,14 @@
 package com.formula.layout.components.navbar;
 
+import com.formula.Config;
 import com.formula.FormulaRouteTelemetryMain;
 import com.formula.layout.ApplicationWindow;
 import com.formula.layout.LayoutSizeManager;
 import com.formula.layout.javafx.utils.Page;
+import com.formula.utilities.math.Interpolation;
 import javafx.animation.Animation;
-import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
-import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -21,9 +21,7 @@ import javafx.scene.text.Font;
 import javafx.util.Duration;
 import lombok.Getter;
 import lombok.Setter;
-import org.kordamp.ikonli.javafx.FontIcon;
 
-import javax.swing.text.Element;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,13 +33,11 @@ public class NavBar extends VBox {
     public static final String NAVBAR_ID = "navbar";
     HBox dashboardBox;
     Label dashboardLabel;
-    HBox workorderHBox;
-    Separator workorderSeparator;
     Separator dashboardSeparator;
 
     List<NavigationButton> navigationButtonList = new ArrayList<>();
 
-    private double navBarWidth = 200;
+    private double navBarWidth = 300;
     private double navBarHeight = 200;
 
     public NavBar(){
@@ -58,49 +54,22 @@ public class NavBar extends VBox {
 
         dashboardBox = new HBox(10);
         dashboardLabel = new Label("Dashboard");
-        dashboardLabel.setFont(new Font(FormulaRouteTelemetryMain.class.getResource("/assets/fonts/Inter/Inter-Light.otf").toString(), 12));
+        dashboardLabel.setFont(new Font(FormulaRouteTelemetryMain.class.getResource("/assets/fonts/Inter/Inter-Light.otf").toString(), 18 * LayoutSizeManager.getInverseScreenAreaRatio()));
 
         dashboardSeparator = new Separator();
         dashboardSeparator.setPrefWidth(100);
-        dashboardBox.getChildren().addAll(dashboardLabel, dashboardSeparator);
+        dashboardBox.getChildren().addAll(dashboardLabel);
         dashboardBox.setPadding(LayoutSizeManager.getResizedInsert(10, 0, 0, 10));
 
         HBox.setHgrow(dashboardLabel, Priority.ALWAYS);
         HBox.setHgrow(dashboardSeparator, Priority.ALWAYS);
 
-        workorderHBox = new HBox(10);
-        Label workorderLabel = new Label("Ordes de Serviço");
-        workorderLabel.setFont(new Font(FormulaRouteTelemetryMain.class.getResource("/assets/fonts/Inter/Inter-Light.otf").toString(), 12));
-
-        workorderSeparator = new Separator();
-        workorderSeparator.setPrefWidth(65);
-        workorderHBox.getChildren().addAll(workorderLabel, workorderSeparator);
-        workorderHBox.setPadding(LayoutSizeManager.getResizedInsert(10, 0, 0, 10));
-
-        HBox.setHgrow(workorderLabel, Priority.ALWAYS);
-        HBox.setHgrow(workorderSeparator, Priority.ALWAYS);
-
-        HBox userHBox = new HBox(10);
-        Label userLabel = new Label("Gerenciar Usuários");
-        userLabel.setFont(new Font(MSPM.class.getResource("/assets/fonts/Inter/Inter-Light.otf").toString(), 12));
-
-        Separator userSeparator = new Separator();
-        userSeparator.setPrefWidth(65);
-        userHBox.getChildren().addAll(userLabel, userSeparator);
-        userHBox.setPadding(LayoutSizeManager.getResizedInsert(10, 0, 0, 10));
-
-        HBox.setHgrow(workorderLabel, Priority.ALWAYS);
-        HBox.setHgrow(userSeparator, Priority.ALWAYS);
-
         getChildren().addAll(
                 dashboardBox,
-                createNavigationButton("Geral", Config.DASHBOARD_ICON, applicationWindow.getViewManager().getDashboardView()),
-                createNavigationButton("Ativos", Config.ASSETS_ICON, applicationWindow.getViewManager().getAssetsView()),
-                workorderHBox,
-                createNavigationButton("Criar", Config.NEW_SERVICE_ORDER_ICON, applicationWindow.getViewManager().getNewWorkorderView()),
-                createNavigationButton("Historico", Config.SERVICES_ORDER_ICON, applicationWindow.getViewManager().getWorkordersView()),
-                userHBox,
-                createNavigationButton("Usuários", Config.USER_NAVBAR_ICON, applicationWindow.getViewManager().getDashboardView())
+                createNavigationButton("Geral", "/formula/icons/home.png", applicationWindow.getViewManager().getDashboardView()),
+                createNavigationButton("Suspenção", "/formula/icons/suspension.png", applicationWindow.getViewManager().getDashboardView()),
+                createNavigationButton("Freio", "/formula/icons/brake-disc.png", applicationWindow.getViewManager().getDashboardView()),
+                createNavigationButton("Power", "/formula/icons/car-engine.png", applicationWindow.getViewManager().getDashboardView())
         );
     }
 
@@ -112,16 +81,16 @@ public class NavBar extends VBox {
 
         HBox mainHBox = new HBox();
 
-        Image iconImage = Config.getIcon(icon);
+        Image iconImage = new Image(FormulaRouteTelemetryMain.class.getResource(icon).toString());
 
         ImageView iconView = new ImageView(iconImage);
-        iconView.setFitWidth(15);
-        iconView.setFitHeight(15);
+        iconView.setFitWidth(24);
+        iconView.setFitHeight(24);
 
         Label titleLabel = new Label();
         titleLabel.setText(title);
-        titleLabel.setFont(new Font(FormulaRouteTelemetryMain.class.getResource("/assets/fonts/Inter/Inter-Light.otf").toString(), 12));
-        titleLabel.setPrefSize(63, 17);
+        titleLabel.setFont(new Font(FormulaRouteTelemetryMain.class.getResource("/assets/fonts/Inter/Inter-Light.otf").toString(), 14 * LayoutSizeManager.getInverseScreenAreaRatio()));
+        titleLabel.setPrefSize(70, 17);
         titleLabel.setMaxSize(titleLabel.getPrefWidth(), titleLabel.getPrefHeight());
 
         titleLabel.setTextFill(Color.web(Config.getColorPalleteProperties("primary-button-color")));

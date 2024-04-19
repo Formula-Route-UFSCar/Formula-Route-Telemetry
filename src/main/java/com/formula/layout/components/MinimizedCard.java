@@ -41,14 +41,14 @@ public class MinimizedCard extends AnchorPane {
         AnchorPane.setTopAnchor(cardStruct, 0.0);
 
         cardTitleLabel = new Label(title);
-        cardTitleLabel.setFont(new Font((int)(24.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
+        cardTitleLabel.setFont(new Font((int)(18.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
         VBox.setVgrow(cardTitleLabel, javafx.scene.layout.Priority.ALWAYS);
         VBox.setMargin(cardTitleLabel, LayoutSizeManager.getResizedInsert(10.0, 0.0, 0.0, 5.0));
 
         HBox cardValueHBox = new HBox();
 
         cardValueLabel = new Label(value);
-        cardValueLabel.setFont(new Font((int)(29.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
+        cardValueLabel.setFont(new Font((int)(22.0 * LayoutSizeManager.getInverseScreenAreaRatio())));
 
         Region cardValueFiller = new Region(); HBox.setHgrow(cardValueFiller, Priority.ALWAYS);
 

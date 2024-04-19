@@ -24,7 +24,8 @@
 
 package com.formula;
 
-import com.formula.manager.utilities.Save;
+import com.formula.layout.ApplicationWindow;
+import com.formula.utilities.common.FilesManager;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -33,7 +34,6 @@ import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.File;
 import java.io.IOException;
 
 @Getter
@@ -46,13 +46,13 @@ public class FormulaRouteTelemetryMain extends Application {
     @Override
     public void start(Stage stage) {
         // Cria o diretório de aplicação, se necessário
-        //FilesManager.applicationDirCreator();
+        FilesManager.applicationDirCreator();
 
         // Cria uma janela principal da aplicação
         var root = new ApplicationWindow();
 
         scene = new Scene(root, ApplicationWindow.MIN_WIDTH + 80, 768, false);
-        scene.getStylesheets().add(getClass().getResource("/mspm/pages/DashboardCSS.css").toString());
+        scene.getStylesheets().add(getClass().getResource("/formula/pages/DashboardCSS.css").toString());
 
         // Define a cena no palco
         stage.setScene(scene);
@@ -60,8 +60,8 @@ public class FormulaRouteTelemetryMain extends Application {
         // Define o título da janela
         stage.setTitle("Formula Route");
 
-        // Adiciona um ícone à barra de título da janela
-        Image appIcon = new Image(FormulaRouteTelemetryMain.class.getResource("/mspm/resources/Icone File.png").toString());
+        // Adiciona um ícone à título da janela
+        Image appIcon = new Image(FormulaRouteTelemetryMain.class.getResource("/formula/menor.png").toString());
         stage.getIcons().add(appIcon);
 
         // Configura o comportamento de fechar da janela

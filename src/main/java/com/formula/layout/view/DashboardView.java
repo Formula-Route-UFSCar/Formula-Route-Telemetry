@@ -2,20 +2,16 @@ package com.formula.layout.view;
 
 
 import com.formula.layout.ApplicationWindow;
+import com.formula.layout.LayoutSizeManager;
 import com.formula.layout.components.Card;
 import com.formula.layout.components.MinimizedCard;
 import com.formula.layout.components.charts.CustomBarChart;
 import com.formula.layout.controller.DashboardController;
+import com.formula.layout.javafx.utils.BadgeStyle;
 import com.formula.layout.javafx.utils.Page;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,28 +19,8 @@ import lombok.Setter;
 @Setter
 public class DashboardView extends Page {
 
-    private Card workorderStateCard;
-    private Card workorderPriorityCard;
-    private Card workordersByAssetCard;
-
-    private MinimizedCard averageOSTimeCard;
-    private MinimizedCard mpCard;
-    private MinimizedCard mpdCard;
-
-    private Card mtbfCard;
-    private Card mttrCard;
-    private Card mttaCard;
-
-    private PieChart workorderStateChart;
-    private PieChart workorderPriorityChart;
-    private CustomBarChart workordersByAssetChart = new CustomBarChart();
-
-    private CustomBarChart MTBFChart = new CustomBarChart();
-    private CustomBarChart MTTRChart = new CustomBarChart();
-    private CustomBarChart MTTAChart = new CustomBarChart();
-
     public DashboardView(ApplicationWindow applicationWindow) {
-        super(applicationWindow, "/mspm/pages/DashboardCSS.css");
+        super(applicationWindow, "/formula/pages/DashboardCSS.css");
         this.controller = new DashboardController(applicationWindow);
         createView();
     }
@@ -66,7 +42,7 @@ public class DashboardView extends Page {
         scrollPane.getStyleClass().add("scroll");
 
         AnchorPane.setBottomAnchor(scrollPane, 0.0);
-        AnchorPane.setLeftAnchor(scrollPane, 0.0);
+        AnchorPane.setLeftAnchor(scrollPane, 20.0);
         AnchorPane.setRightAnchor(scrollPane, 0.0);
         AnchorPane.setTopAnchor(scrollPane, 0.0);
 
@@ -76,7 +52,17 @@ public class DashboardView extends Page {
         contentAnchorPane.setMaxHeight(contentAnchorPane.getPrefHeight());
         contentAnchorPane.getStyleClass().add("body");
 
+        HBox hbox1 = new HBox();
 
+        //Card testCard = new Card("","","");
+
+        MinimizedCard testMinimizedCard = new MinimizedCard("Temperatura de Freio","22°C","+2.0%", BadgeStyle.DANGER);
+
+        HBox.setMargin(testMinimizedCard, LayoutSizeManager.getResizedInsert(0.0, 0.0, 00.0, 0.0));
+
+        hbox1.getChildren().addAll(testMinimizedCard);
+
+        contentAnchorPane.getChildren().addAll(hbox1);
         scrollPane.setContent(contentAnchorPane);
 
         getChildren().add(scrollPane);

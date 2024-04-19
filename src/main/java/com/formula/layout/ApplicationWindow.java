@@ -32,6 +32,7 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -116,6 +117,42 @@ public class ApplicationWindow extends AnchorPane {
 
         // Adds BorderPane as a child of AnchorPane (main window)
         getChildren().addAll(borderPane);
+
+        realise();
+    }
+
+    public void realise(){
+        // Configuration of the navigation bar and top menu after login
+        borderPane.setMaxWidth(Double.MAX_VALUE);
+
+        AnchorPane lFiller = new AnchorPane(); HBox.setHgrow(lFiller, Priority.ALWAYS); lFiller.setMinWidth(160.0);
+        AnchorPane rFiller = new AnchorPane(); HBox.setHgrow(rFiller, Priority.ALWAYS); rFiller.setMinWidth(160.0);
+
+        HBox topHBox = new HBox();
+        topHBox.getChildren().addAll(getViewManager().getTopMenu());
+
+        double rightOffset = 160.0;
+
+        rightOffset = LayoutSizeManager.getPageSideOffset();// + getViewManager().getNavBar().getNavBarWidth();
+
+        rFiller.setMinWidth(rightOffset);
+
+        HBox.setMargin(getViewManager().getTopMenu(), LayoutSizeManager.getResizedInsert(0.0, rightOffset, 0.0, LayoutSizeManager.getPageSideOffset()));
+
+        HBox leftHBox = new HBox();
+        leftHBox.getChildren().addAll(getViewManager().getNavBar());
+
+        HBox.setMargin(getViewManager().getNavBar(), LayoutSizeManager.getResizedInsert( 0.0,0.0,0.0, LayoutSizeManager.getPageSideOffset()));
+
+        borderPane.setLeft(leftHBox);
+        borderPane.setTop(topHBox);
+        borderPane.setRight(rFiller);
+
+        getChildren().clear();
+        getChildren().addAll(borderPane);
+
+        // Switches to the main dashboard page after logging in
+        changePage(viewManager.getDashboardView());
     }
 
     // Variable to store the currently loaded page

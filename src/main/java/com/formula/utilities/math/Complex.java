@@ -1,4 +1,4 @@
-package com.brasens.utilities.math;
+package com.formula.utilities.math;
 /******************************************************************************
  *  Compilation:  javac Complex.java
  *  Execution:    java Complex

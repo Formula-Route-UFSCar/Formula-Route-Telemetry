@@ -1,8 +1,8 @@
-package com.brasens.utilities.analyses;
+package com.formula.utilities.analyses;
 
 import java.util.Arrays;
 
-import com.brasens.utilities.math.Vector2D;
+import com.formula.utilities.math.Vector2D;
 import org.jtransforms.fft.DoubleFFT_1D;
 
 public class FFT {

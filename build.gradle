@@ -53,6 +53,10 @@ dependencies {
     implementation group: 'org.kordamp.ikonli', name: 'ikonli-javafx', version: '12.3.1'
     implementation group: 'org.kordamp.ikonli', name: 'ikonli-material2-pack', version: '12.3.1'
     implementation group: 'org.kordamp.ikonli', name: 'ikonli-fontawesome-pack', version: '12.3.1'
+
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.5'
+
     testCompileOnly 'org.projectlombok:lombok:1.18.26'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
 }

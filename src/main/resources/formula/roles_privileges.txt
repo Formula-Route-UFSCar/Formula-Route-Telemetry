@@ -1,0 +1,12 @@
+asset-create
+asset-manual-downtime
+asset-delete
+asset-edit
+
+workorder-create
+workorder-delete
+workorder-edit
+
+user-create
+user-delete
+user-edit

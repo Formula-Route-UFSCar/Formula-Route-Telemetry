@@ -1,5 +1,7 @@
 package com.formula.layout.components.navbar;
 
+import com.formula.layout.ApplicationWindow;
+import com.formula.layout.javafx.utils.Page;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;

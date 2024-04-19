@@ -1,15 +1,15 @@
 package com.formula.layout.components;
 
+import com.formula.FormulaRouteTelemetryMain;
 import com.formula.layout.LayoutSizeManager;
 import com.formula.layout.javafx.utils.BadgeStyle;
-import javafx.geometry.Insets;
+import com.formula.utilities.common.ImageUtils;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import lombok.Getter;
@@ -72,55 +72,55 @@ public class Badge extends AnchorPane {
             case SUCCESS:
                 backgroundColor = "rgba(0, 134, 78, 0.2)";
                 textColor = "#005037";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/check-circle.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/check-circle.png").toString()),
                         Color.web(textColor));
                 break;
             case DANGER:
                 backgroundColor = "rgba(255, 0, 0, 0.2)";
                 textColor = "#990000";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/exclamation.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/exclamation.png").toString()),
                         Color.web(textColor));
                 break;
             case WARNING:
                 backgroundColor = "rgba(255, 204, 0, 0.2)";
                 textColor = "#996600";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/exclamation.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/exclamation.png").toString()),
                         Color.web(textColor));
                 break;
             case PRIMARY:
                 backgroundColor = "rgba(0, 0, 255, 0.2)";
                 textColor = "#000099";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/check-circle.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/check-circle.png").toString()),
                         Color.web(textColor));
                 break;
             case INFO:
                 backgroundColor = "rgba(128, 128, 128, 0.2)";
                 textColor = "#404040";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/info.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/info.png").toString()),
                         Color.web(textColor));
                 break;
             case COMPLETED:
                 backgroundColor = "rgba(0, 134, 78, 0.2)";
                 textColor = "#005037";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/check-circle.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/check-circle.png").toString()),
                         Color.web(textColor));
                 break;
             case PROGRESS:
                 backgroundColor = "rgba(255, 0, 0, 0.2)";
                 textColor = "#996600";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/clock.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/clock.png").toString()),
                         Color.web(textColor));
                 break;
             case OPENING:
                 backgroundColor = "rgba(255, 0, 0, 0.2)";
                 textColor = "#990000";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/clock.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/clock.png").toString()),
                         Color.web(textColor));
                 break;
             case PLANNING:
                 backgroundColor = "rgba(255, 0, 0, 0.2)";
                 textColor = "#996600";
-                backgroundImage = ImageUtils.colorizeImage(new Image(MSPM.class.getResource("/mspm/icons/calendar-clock.png").toString()),
+                backgroundImage = ImageUtils.colorizeImage(new Image(FormulaRouteTelemetryMain.class.getResource("/formula/icons/calendar-clock.png").toString()),
                         Color.web(textColor));
                 break;
             default:

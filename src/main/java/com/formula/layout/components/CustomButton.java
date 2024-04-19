@@ -1,6 +1,7 @@
 package com.formula.layout.components;
 
 import com.formula.layout.LayoutSizeManager;
+import com.formula.utilities.math.Interpolation;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
