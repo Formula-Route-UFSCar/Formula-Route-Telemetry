@@ -1,17 +1,21 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.13'
-    // id 'org.beryx.jlink' version '2.12.0'
+    id 'org.openjfx.javafxplugin' version "0.0.13"
+    id 'org.beryx.jlink' version '2.12.0'
+    id 'com.gluonhq.gluonfx-gradle-plugin' version '1.0.19'
 }
 
 group 'com.formula'
-version '1.0-SNAPSHOT'
+version '1.0'
 
-sourceCompatibility = 11
+sourceCompatibility = "17"
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://nexus.gluonhq.com/nexus/content/repositories/releases'
+    }
     flatDir {
         dirs 'libs'
     }
@@ -20,59 +24,45 @@ repositories {
 //application{
 //   mainClassName("com.matheusmarkies.spaghettibridge.main.Main")
 //  mainModule.set("com.matheusmarkies.spaghettibridge")
-//}
+//}//
 
 dependencies {
+    implementation 'org.jetbrains:annotations:24.0.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'com.fazecast:jSerialComm:2.9.2'
-    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-    implementation 'mysql:mysql-connector-java:5.1.13'
-    // https://mvnrepository.com/artifact/org.openjfx/javafx-web
-    implementation group: 'org.openjfx', name: 'javafx-web', version: '20-ea+11'
-    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation group: 'org.openjfx', name: 'javafx-web', version: '20.0.2'
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
-    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.14.1'
-    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.1'
-    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.1'
-
-    //Apache POI
-    // https://mvnrepository.com/artifact/dom4j/dom4j
-    implementation group: 'dom4j', name: 'dom4j', version: '1.6.1'
-
-    // https://mvnrepository.com/artifact/xml-apis/xml-apis
-    implementation group: 'xml-apis', name: 'xml-apis', version: '1.0.b2'
-
-    // https://mvnrepository.com/artifact/commons-codec/commons-codec
-    implementation group: 'commons-codec', name: 'commons-codec', version: '1.5'
-    // https://mvnrepository.com/artifact/commons-logging/commons-logging
-    implementation group: 'commons-logging', name: 'commons-logging', version: '1.1'
-    // https://mvnrepository.com/artifact/log4j/log4j
-    implementation group: 'log4j', name: 'log4j', version: '1.2.13'
-
-    // https://mvnrepository.com/artifact/org.apache.poi/poi
-    implementation group: 'org.apache.poi', name: 'poi', version: '3.9'
-
-    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
-    implementation group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.9'
-    //Apache POI
-
-    // https://mvnrepository.com/artifact/org.projectlombok/lombok
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
-
-    testCompileOnly 'org.projectlombok:lombok:1.18.24'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0'
+    implementation group: 'org.update4j', name: 'update4j', version: '1.5.9'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+    implementation group: 'com.github.wendykierp', name: 'JTransforms', version: '3.0'
+    implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+    implementation group: 'io.github.typhon0', name: 'AnimateFX', version: '1.2.4'
+    implementation group: 'com.jfoenix', name: 'jfoenix', version: '9.0.1'
+    implementation 'com.gluonhq:charm-glisten:6.2.3'
+    implementation 'com.gluonhq:glisten-afterburner:2.1.0'
+    implementation 'io.github.mkpaz:atlantafx-base:2.0.1'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
+    implementation group: 'fr.brouillard.oss', name: 'cssfx', version: '11.5.1'
+    implementation group: 'org.kordamp.ikonli', name: 'ikonli-javafx', version: '12.3.1'
+    implementation group: 'org.kordamp.ikonli', name: 'ikonli-material2-pack', version: '12.3.1'
+    implementation group: 'org.kordamp.ikonli', name: 'ikonli-fontawesome-pack', version: '12.3.1'
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
 }
 
 test {
+    systemProperty "file.encoding", "UTF-8"
     useJUnitPlatform()
 }
 
-javafx{
+javafx {
     modules =
             [
                     'javafx.swing',
@@ -82,33 +72,41 @@ javafx{
                     'javafx.controls',
                     'javafx.web'
             ]
-    version = '12'
-}
+    version = "20.0.2"
+}//
 
-mainClassName = 'com.formula.Main'
-
-//jlink {
-//targetPlatform("mac") {
-//    jdkHome = "/usr/java/jdk-mac/Contents/Home"
-//}
-//targetPlatform("linux-x64") {
-//    jdkHome = "/usr/java/jdk"
-//}
-//targetPlatform("windows-x64") {
-//    jdkHome = "/usr/java/jdk-win"
-//}
-//options = ['--compress', '2', '--no-header-files', '--no-man-pages']
-//   launcher {
-//       name = 'com.matheusmarkies.spaghettibridge.main'
-//   }
-//}
+mainClassName = "com.formula.Main"
 
 jar {
     manifest {
-        attributes 'Main-Class': "$mainClassName"
+        attributes 'Main-Class': mainClassName
     }
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
 
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'com.formula'
+    }
+    moduleName = 'com.formula'
+    mainClass = 'com.formula.Main'
+}
+
+gluonfx {
+    // target = 'ios' // Uncomment to enable iOS
+    // target = 'android' // Uncomment to enable Android
+    attachConfig {
+        version = "4.0.18"
+        services 'display', 'lifecycle', 'statusbar', 'storage'
+    }
+}
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }

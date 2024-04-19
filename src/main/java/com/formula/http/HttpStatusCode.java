@@ -22,28 +22,40 @@
  * SOFTWARE.
  */
 
-package com.formula.serialport;
+package com.formula.http;
 
-import com.fazecast.jSerialComm.SerialPort;
+public enum HttpStatusCode {
+    OK(200, "OK"),
+    NO_CONTENT(204, "No Content"),
+    BAD_REQUEST(400, "Bad Request"),
+    UNAUTHORIZED(401, "Unauthorized"),
+    FORBIDDEN(403, "Forbidden"),
+    NOT_FOUND(404, "Not Found"),
+    INTERNAL_SERVER_ERROR(500, "Internal Server Error"),
+    ACCEPTABLE(202, "Acceptable");
 
-import java.util.ArrayList;
-import java.util.List;
+    private final int code;
+    private final String message;
 
-public class SerialManager{
-
-    public static SerialPort[] getSerialPortList(){
-        return SerialPort.getCommPorts();
+    HttpStatusCode(int code, String message) {
+        this.code = code;
+        this.message = message;
     }
 
-    public static List<String> getSerialPortNames(){
-        List<String> names = new ArrayList<String>();
-        SerialPort[] serialPortList = getSerialPortList();
+    public int getCode() {
+        return code;
+    }
 
-        for (SerialPort port: serialPortList) {
-            names.add(port.getDescriptivePortName());
+    public String getMessage() {
+        return message;
+    }
+
+    public static HttpStatusCode fromCode(int code) {
+        for (HttpStatusCode httpStatusCode : values()) {
+            if (httpStatusCode.code == code) {
+                return httpStatusCode;
+            }
         }
-
-        return names;
+        return null;
     }
-
 }

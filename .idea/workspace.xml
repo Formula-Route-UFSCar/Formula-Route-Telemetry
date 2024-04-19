@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa8cfb35-210b-4422-82f7-0e132a0561b3" name="Changes" comment="Added: Serial communication between the receiver and the computer running the program.&#10;By structures converted into Json to improve serial communication performance, replacing the old string system.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/manager/utilities/XLS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/http/HttpStatusCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/ApplicationWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/LayoutSizeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/formula/layout/ViewManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/FormulaRouteTelemetryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/FormulaRouteTelemetryMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/MainFrameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/MainFrameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/objects/WheelSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/objects/WheelSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/Hardware/CarTelemetrySystem.ino" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/formula/Hardware/CarTelemetrySystem.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/formula/MainFrame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/formula/MainFrame.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/MainFrameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/frames/controller/popup/ConnectPopUpController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/objects/WheelSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialReadder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/formula/serialport/SerialRunnable.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,18 +129,8 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <recent_temporary>
       <list>
