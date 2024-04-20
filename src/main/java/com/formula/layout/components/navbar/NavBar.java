@@ -67,9 +67,9 @@ public class NavBar extends VBox {
         getChildren().addAll(
                 dashboardBox,
                 createNavigationButton("Geral", "/formula/icons/home.png", applicationWindow.getViewManager().getDashboardView()),
-                createNavigationButton("Suspenção", "/formula/icons/suspension.png", applicationWindow.getViewManager().getDashboardView()),
-                createNavigationButton("Freio", "/formula/icons/brake-disc.png", applicationWindow.getViewManager().getDashboardView()),
-                createNavigationButton("Power", "/formula/icons/car-engine.png", applicationWindow.getViewManager().getDashboardView())
+                createNavigationButton("Suspenção", "/formula/icons/suspension.png", applicationWindow.getViewManager().getSuspensionView()),
+                createNavigationButton("Freio", "/formula/icons/brake-disc.png", applicationWindow.getViewManager().getBrakeView()),
+                createNavigationButton("Power", "/formula/icons/car-engine.png", applicationWindow.getViewManager().getPowerView())
         );
     }
 

@@ -26,7 +26,10 @@ package com.formula.layout;
 
 import com.formula.layout.components.TopMenu;
 import com.formula.layout.components.navbar.NavBar;
+import com.formula.layout.view.BrakeView;
 import com.formula.layout.view.DashboardView;
+import com.formula.layout.view.PowerView;
+import com.formula.layout.view.SuspensionView;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,9 +40,15 @@ public class ViewManager {
     private TopMenu topMenu;
 
     private DashboardView dashboardView;
+    private BrakeView brakeView;
+    private SuspensionView suspensionView;
+    private PowerView powerView;
 
     public ViewManager(ApplicationWindow applicationWindow) {
-    dashboardView = new DashboardView(applicationWindow);
+        dashboardView = new DashboardView(applicationWindow);
+        brakeView = new BrakeView(applicationWindow);
+        suspensionView = new SuspensionView(applicationWindow);
+        powerView = new PowerView(applicationWindow);
     }
 
     public void setup(ApplicationWindow applicationWindow){
