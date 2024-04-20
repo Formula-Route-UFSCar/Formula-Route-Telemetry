@@ -56,7 +56,7 @@ public class BrakeView extends Page {
 
         //Card testCard = new Card("","","");
 
-        MinimizedCard testMinimizedCard = new MinimizedCard("Temperatura de Freio","22°C","+2.0%", BadgeStyle.DANGER);
+        MinimizedCard testMinimizedCard = new MinimizedCard("Temperatura de Freio","25°C","+2.0%", BadgeStyle.DANGER);
 
         HBox.setMargin(testMinimizedCard, LayoutSizeManager.getResizedInsert(0.0, 0.0, 00.0, 0.0));
 
